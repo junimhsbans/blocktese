@@ -14,6 +14,4 @@ app.get('/', (req, res) => {
     res.send('Helo Word');
 })
 
-app.listen(3000, () => {
-    console.log('Rodando na porta 3000');
-})
+app.listen(process.env.PORT || 3000);
