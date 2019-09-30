@@ -8,7 +8,9 @@ app.use(cors());
 
 app.post('/teste', (req, res) => {
     console.log(req.body);
-    return res.json({ ok: true });
+    console.log('Objeto');
+    console.log(req);
+    return res.json({ ok: req });
 })
 
 app.get('/', (req, res) => {
