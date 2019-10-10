@@ -22,9 +22,9 @@ app.get("/get", (req, res) => {
   return res.json({ ok: true });
 });
 
-app.get("/mensagens", async (req, res) => {
+app.post("/mensagens", async (req, res) => {
   const data = await api.get(
-    "messages?token=p7cszdv6dsfkct6z&lastMessageNumber=20&chatId=556285380621%40c.us"
+    `messages?token=p7cszdv6dsfkct6z&lastMessageNumber=20&chatId=${req.body.phone}%40c.us`
   );
   return res.json(data.data);
 });
