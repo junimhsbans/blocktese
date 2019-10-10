@@ -32,8 +32,10 @@ app.post("/mensagens", async (req, res) => {
     if (req.body.token !== "7e7ea27176aaadda5bc1eec0a25ff3f6") {
       return res.json({ error: "Token invalido" });
     }
+    const chatId = req.body.chatId;
+    const df = chatId.substr(0, 12);
     const data = await api.get(
-      `messages?token=p7cszdv6dsfkct6z&lastMessageNumber=20&chatId=${req.body.phone}%40c.us`
+      `messages?token=p7cszdv6dsfkct6z&lastMessageNumber=20&chatId=${df}%40c.us`
     );
     return res.json(data.data);
   } catch (error) {
