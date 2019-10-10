@@ -24,7 +24,7 @@ app.get("/get", (req, res) => {
 
 app.get("/mensagens", async (req, res) => {
   const data = await api.get(
-    "messages?token=p7cszdv6dsfkct6z&lastMessageNumber=20&chatId=556283120977%40c.us"
+    "messages?token=p7cszdv6dsfkct6z&lastMessageNumber=20&chatId=5562985380621%40c.us"
   );
   return res.json(data.data);
 });
@@ -50,12 +50,6 @@ app.post("/leads", async (req, res) => {
   const texto2 = `Sou o William e falo aqui da Penta Incorporadora`;
   const texto3 = `Vi aqui que você demonstrou interesse em conhecer um de nossos condomínio fechados o ${req.body.product}. Por isso,  estou entrando em contato.`;
   const texto4 = `Posso te enviar algumas fotos do nosso decorado?`;
-
-  // const aviso = `Acabou de receber um lead novo - Usuario: ${req.body.name} - Produto: ${req.body.product} - Telefone: ${req.body.phone}`;
-  // const datas = await api.post("sendMessage?token=p7cszdv6dsfkct6z", {
-  //   phone: phone,
-  //   body: aviso
-  // });
   // Enviando mensagem para o cliente
   const data = await api.post("sendMessage?token=p7cszdv6dsfkct6z", {
     phone: req.body.phone,
