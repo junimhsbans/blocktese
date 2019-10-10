@@ -82,6 +82,12 @@ app.post("/leads", async (req, res) => {
     const texto2 = `Sou o William e falo aqui da Penta Incorporadora`;
     const texto3 = `Vi aqui que você demonstrou interesse em conhecer um de nossos condomínio fechados o ${req.body.product}. Por isso,  estou entrando em contato.`;
     const texto4 = `Posso te enviar algumas fotos do nosso decorado?`;
+    const aviso = `Novo lead cadastrado - Nome: ${req.body.name} - Telefone: ${req.body.phone} - Produto: ${req.body.product}`;
+    // Disparando aviso de novo lead
+    const data = await api.post("sendMessage?token=p7cszdv6dsfkct6z", {
+      phone: "5562992208625",
+      body: aviso
+    });
     // Enviando mensagem para o cliente
     const data = await api.post("sendMessage?token=p7cszdv6dsfkct6z", {
       phone: req.body.phone,
