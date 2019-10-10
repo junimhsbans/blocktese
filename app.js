@@ -46,6 +46,15 @@ app.post("/group", async (req, res) => {
   return res.json(data.data);
 });
 
+app.get("/contatos", async (req, res) => {
+  try {
+    const data = await api.get("dialogs?token=p7cszdv6dsfkct6z");
+    return res.json(data.data);
+  } catch (error) {
+    return res.json({ error: "Falha na requisição" });
+  }
+});
+
 app.get("/status", async (req, res) => {
   const data = await api.get("status?token=p7cszdv6dsfkct6z");
   return res.json(data.data);
