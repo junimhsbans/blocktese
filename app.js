@@ -24,7 +24,7 @@ app.get("/get", (req, res) => {
 
 app.get("/mensagens", async (req, res) => {
   const data = await api.get(
-    "messages?token=p7cszdv6dsfkct6z&lastMessageNumber=20&chatId=5562985380621%40c.us"
+    "messages?token=p7cszdv6dsfkct6z&lastMessageNumber=20&chatId=556285380621%40c.us"
   );
   return res.json(data.data);
 });
