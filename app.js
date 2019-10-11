@@ -84,7 +84,7 @@ app.post("/leads", async (req, res) => {
     const texto4 = `Posso te enviar algumas fotos do nosso decorado?`;
     const aviso = `Novo lead cadastrado - Nome: ${req.body.name} - Telefone: ${req.body.phone} - Produto: ${req.body.product}`;
     // Disparando aviso de novo lead
-    const data = await api.post("sendMessage?token=p7cszdv6dsfkct6z", {
+    const datas = await api.post("sendMessage?token=p7cszdv6dsfkct6z", {
       phone: "5562992208625",
       body: aviso
     });
