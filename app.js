@@ -8,6 +8,14 @@ app.use(cors());
 
 app.post("/teste", (req, res) => {
   console.log(req.body);
+  console.log(
+    "-----------------------------------------------------------------------------------------------------------------------"
+  );
+  console.log(req.body.leads);
+  console.log(
+    "-----------------------------------------------------------------------------------------------------------------------"
+  );
+  console.log(req.body.leads.last_conversion);
   return res.json({ ok: true });
 });
 
