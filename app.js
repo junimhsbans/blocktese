@@ -15,7 +15,7 @@ app.post("/teste", (req, res) => {
   console.log(
     "-----------------------------------------------------------------------------------------------------------------------"
   );
-  console.log(req.body.leads.last_conversion);
+  console.log(req.body.leads["last_conversion"]);
   return res.json({ ok: true });
 });
 
@@ -105,18 +105,14 @@ app.post("/leads", async (req, res) => {
       phone: req.body.phone,
       body: texto2
     });
-    setTimeout(async () => {
-      const data3 = await api.post("sendMessage?token=p7cszdv6dsfkct6z", {
-        phone: req.body.phone,
-        body: texto3
-      });
-    }, 6000);
-    setTimeout(async () => {
-      const data4 = await api.post("sendMessage?token=p7cszdv6dsfkct6z", {
-        phone: req.body.phone,
-        body: texto4
-      });
-    }, 9000);
+    const data3 = await api.post("sendMessage?token=p7cszdv6dsfkct6z", {
+      phone: req.body.phone,
+      body: texto3
+    });
+    const data4 = await api.post("sendMessage?token=p7cszdv6dsfkct6z", {
+      phone: req.body.phone,
+      body: texto4
+    });
 
     return res.json({ ok: "Enviado com sucesso" });
   } catch (error) {
