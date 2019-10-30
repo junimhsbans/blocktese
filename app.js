@@ -1,4 +1,4 @@
-const express = require("express");
+﻿const express = require("express");
 var api = require("./api");
 var cors = require("cors");
 const app = express();
@@ -11,11 +11,6 @@ app.post("/teste", (req, res) => {
   console.log(
     "-----------------------------------------------------------------------------------------------------------------------"
   );
-  console.log(req.body.leads);
-  console.log(
-    "-----------------------------------------------------------------------------------------------------------------------"
-  );
-  console.log(req.body.leads["last_conversion"]);
   return res.json({ ok: true });
 });
 
