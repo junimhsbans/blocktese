@@ -14,6 +14,15 @@ app.post("/teste", (req, res) => {
   return res.json({ ok: true });
 });
 
+app.post("/get", (req, res) => {
+  console.log(req);
+  console.log(
+    "-----------------------------------------------------------------------------------------------------------------------"
+  );
+  console.log(req.query);
+  return res.json({ ok: true });
+});
+
 app.post("/reqs", (req, res) => {
   console.log(req);
   return res.json({ ok: true });
