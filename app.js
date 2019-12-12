@@ -1,5 +1,6 @@
 ﻿const express = require("express");
 var api = require("./api");
+var teste = require("./teste");
 var cors = require("cors");
 const app = express();
 
@@ -14,9 +15,13 @@ app.post("/teste", (req, res) => {
   return res.json({ ok: true });
 });
 
-app.post("/get", (req, res) => {
+app.post("/get", async (req, res) => {
   console.log("--------------------- Meus Dados -----------------------------");
   console.log(req.body.messages);
+  await teste.post("/chat", {
+    messages: req.body.messages
+  });
+
   return res.json({ ok: true });
 });
 
