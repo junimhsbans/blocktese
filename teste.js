@@ -1,7 +1,7 @@
 const axios = require("axios");
 
-const api = axios.create({
+const teste = axios.create({
   baseURL: "https://api.leadflow.digital"
 });
 
-module.exports = api;
+module.exports = teste;
