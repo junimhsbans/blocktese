@@ -16,7 +16,7 @@ app.post("/teste", (req, res) => {
 
 app.post("/get", (req, res) => {
   console.log("--------------------- Meus Dados -----------------------------");
-  console.log(req.body);
+  console.log(req.body.messages);
   return res.json({ ok: true });
 });
 
