@@ -15,11 +15,8 @@ app.post("/teste", (req, res) => {
 });
 
 app.post("/get", (req, res) => {
-  console.log(req);
-  console.log(
-    "-----------------------------------------------------------------------------------------------------------------------"
-  );
-  console.log(req.query);
+  console.log("--------------------- Meus Dados -----------------------------");
+  console.log(req.body);
   return res.json({ ok: true });
 });
 
