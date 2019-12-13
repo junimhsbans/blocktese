@@ -8,45 +8,6 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.post("/teste", (req, res) => {
-  console.log(req.body);
-  console.log(
-    "-----------------------------------------------------------------------------------------------------------------------"
-  );
-  return res.json({ ok: true });
-});
-
-app.post("/get", async (req, res) => {
-  console.log("--------------------- Meus Dados -----------------------------");
-  console.log(req.body.messages);
-  const df = axios.create({
-    baseURL: "https://api.leadflow.digital"
-  });
-  await df.post("/chat", {
-    messages: req.body.messages
-  });
-
-  return res.json({ ok: true });
-});
-
-app.post("/reqs", (req, res) => {
-  console.log(req);
-  return res.json({ ok: true });
-});
-
-app.get("/get", (req, res) => {
-  console.log(req.query);
-  const df = axios.create({
-    baseURL: "https://api.leadflow.digital"
-  });
-  await df.post("/chat", {
-    messages: {
-      type: 1
-    }
-  });
-  return res.json({ ok: true });
-});
-
 // Requisições do chatbot
 app.post("/mensagens", async (req, res) => {
   try {
