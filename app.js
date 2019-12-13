@@ -36,7 +36,14 @@ app.post("/reqs", (req, res) => {
 
 app.get("/get", (req, res) => {
   console.log(req.query);
-  // console.log(req.params)
+  const df = axios.create({
+    baseURL: "https://api.leadflow.digital"
+  });
+  await df.post("/chat", {
+    messages: {
+      type: 1
+    }
+  });
   return res.json({ ok: true });
 });
 
