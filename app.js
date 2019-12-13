@@ -1,7 +1,8 @@
 ﻿const express = require("express");
 var api = require("./api");
-var teste = require("./teste");
 var cors = require("cors");
+const axios = require("axios");
+
 const app = express();
 
 app.use(express.json());
@@ -18,7 +19,10 @@ app.post("/teste", (req, res) => {
 app.post("/get", async (req, res) => {
   console.log("--------------------- Meus Dados -----------------------------");
   console.log(req.body.messages);
-  await teste.post("/chat", {
+  const df = axios.create({
+    baseURL: "https://api.leadflow.digital"
+  });
+  await df.post("/chat", {
     messages: req.body.messages
   });
 
