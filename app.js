@@ -32,6 +32,7 @@ app.post("/mensagens", async (req, res) => {
 app.post('/wb-email', (req, res) => {
   console.log('------------------------------ WEBHOOK EMAIL ------------------------------')
   console.log(req.body);
+  return res.send();
 })
 
 app.post("/group", async (req, res) => {
