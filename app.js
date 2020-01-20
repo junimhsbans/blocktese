@@ -29,6 +29,11 @@ app.post("/mensagens", async (req, res) => {
   }
 });
 
+app.post('/wb-email', (req, res) => {
+  console.log('------------------------------ WEBHOOK EMAIL ------------------------------')
+  console.log(req.body);
+})
+
 app.post("/group", async (req, res) => {
   try {
     const data = await api.post("group?token=p7cszdv6dsfkct6z", {
